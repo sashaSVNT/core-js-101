@@ -52,7 +52,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-  return `Hello, ${firstName} ${lastName}!`
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -66,7 +66,8 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  return value.split(' ')[2].slice(0, -1);
+  let arr = value.split(' ');
+  return arr[1] + arr[2].slice(0, -1);
 }
 
 /**
@@ -205,9 +206,9 @@ function getRectangleString(width, height) {
   const xLine = ('─').repeat(width - 2);
   const yLine = (' ').repeat(height - 2);
 
-  const topRect = '┌' + xLine + '┐\n';
-  const midRect = '│' + yLine + '│\n';
-  const bottomRect = '└' + xLine + '┘\n';
+  const topRect = `┌${xLine}┐\n`;
+  const midRect = `│${yLine}│\n`;
+  const bottomRect = `└${xLine}┘\n`;
 
   return topRect + midRect.repeat(height - 2) + bottomRect;
 }
@@ -231,7 +232,7 @@ function getRectangleString(width, height) {
  */
 function encodeToRot13(str) {
   const symbols = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM';
-  return str.replace(/[a-z]/gi, letter => symbols[symbols.indexOf(letter) + 13]);
+  return str.replace(/[a-z]/gi, (letter) => symbols[symbols.indexOf(letter) + 13]);
 }
 
 /**
@@ -280,9 +281,9 @@ function getCardId(value) {
   const cardTemplate = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
     'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
     'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
-    'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'
+    'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠',
   ];
-  return cardTemplate.indexOf(value)
+  return cardTemplate.indexOf(value);
 }
 
 
