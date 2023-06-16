@@ -66,8 +66,8 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  let arr = value.split(' ');
-  return arr[1] + arr[2].slice(0, -1);
+  const arr = value.split(' ').shift();
+  return arr.join(' ').slice(0, -1);
 }
 
 /**
