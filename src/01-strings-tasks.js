@@ -66,8 +66,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  const arr = value.split(' ').shift();
-  return arr.join(' ').slice(0, -1);
+  return value.split(' ').slice(1).join(' ').slice(0, -1);
 }
 
 /**
@@ -204,7 +203,7 @@ function extractEmails(str) {
  */
 function getRectangleString(width, height) {
   const xLine = ('─').repeat(width - 2);
-  const yLine = (' ').repeat(height - 2);
+  const yLine = (' ').repeat(width - 2);
 
   const topRect = `┌${xLine}┐\n`;
   const midRect = `│${yLine}│\n`;
@@ -249,7 +248,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  return typeof value === 'string';
+  return value instanceof String || typeof value === 'string';
 }
 
 
